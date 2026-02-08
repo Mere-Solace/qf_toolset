@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finance"
+version = "1.0.0"
+description = "Financial analysis toolset with data pipelines, option pricing, and macro indicators"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "websockets>=12.0",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "statsmodels>=0.14",
+    "scipy>=1.12",
+    "matplotlib>=3.8",
+    "openpyxl>=3.1",
+    "yfinance>=0.2.36",
+    "fredapi>=0.5",
+    "requests>=2.31",
+    "apscheduler>=3.10",
+    "pydantic-settings>=2.1",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "httpx>=0.27",
+    "ruff>=0.3",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
