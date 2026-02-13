@@ -1,0 +1,66 @@
+{
+  "fred": {
+    "treasury_rates": [
+      {"id": "DGS1", "name": "1-Year Treasury", "unit": "%", "frequency": "daily", "category": "rates"},
+      {"id": "DGS2", "name": "2-Year Treasury", "unit": "%", "frequency": "daily", "category": "rates"},
+      {"id": "DGS5", "name": "5-Year Treasury", "unit": "%", "frequency": "daily", "category": "rates"},
+      {"id": "DGS10", "name": "10-Year Treasury", "unit": "%", "frequency": "daily", "category": "rates"},
+      {"id": "DGS30", "name": "30-Year Treasury", "unit": "%", "frequency": "daily", "category": "rates"},
+      {"id": "DGS3MO", "name": "3-Month Treasury", "unit": "%", "frequency": "daily", "category": "rates"}
+    ],
+    "spreads": [
+      {"id": "T10Y2Y", "name": "10Y-2Y Treasury Spread", "unit": "%", "frequency": "daily", "category": "spreads"},
+      {"id": "T10Y3M", "name": "10Y-3M Treasury Spread", "unit": "%", "frequency": "daily", "category": "spreads"},
+      {"id": "T10YFF", "name": "10Y minus Fed Funds", "unit": "%", "frequency": "daily", "category": "spreads"},
+      {"id": "BAMLH0A0HYM2", "name": "HY OAS (ICE BofA)", "unit": "bps", "frequency": "daily", "category": "spreads"},
+      {"id": "BAMLC0A0CM", "name": "IG Corporate OAS", "unit": "bps", "frequency": "daily", "category": "spreads"},
+      {"id": "BAMLC0A4CBBB", "name": "BBB Corporate OAS", "unit": "bps", "frequency": "daily", "category": "spreads"},
+      {"id": "BAMLH0A1HYBB", "name": "BB HY OAS", "unit": "bps", "frequency": "daily", "category": "spreads"}
+    ],
+    "inflation": [
+      {"id": "CPIAUCSL", "name": "CPI All Urban", "unit": "Index", "frequency": "monthly", "category": "inflation"},
+      {"id": "CPILFESL", "name": "Core CPI (ex Food & Energy)", "unit": "Index", "frequency": "monthly", "category": "inflation"},
+      {"id": "PCEPILFE", "name": "Core PCE Price Index", "unit": "Index", "frequency": "monthly", "category": "inflation"},
+      {"id": "T10YIE", "name": "10Y Breakeven Inflation", "unit": "%", "frequency": "daily", "category": "inflation"},
+      {"id": "T5YIE", "name": "5Y Breakeven Inflation", "unit": "%", "frequency": "daily", "category": "inflation"},
+      {"id": "T5YIFR", "name": "5Y5Y Forward Inflation", "unit": "%", "frequency": "daily", "category": "inflation"},
+      {"id": "MICH", "name": "UMich Inflation Expectations", "unit": "%", "frequency": "monthly", "category": "inflation"}
+    ],
+    "employment": [
+      {"id": "UNRATE", "name": "Unemployment Rate", "unit": "%", "frequency": "monthly", "category": "employment"},
+      {"id": "PAYEMS", "name": "Nonfarm Payrolls", "unit": "Thousands", "frequency": "monthly", "category": "employment"},
+      {"id": "ICSA", "name": "Initial Jobless Claims", "unit": "Thousands", "frequency": "weekly", "category": "employment"},
+      {"id": "CIVPART", "name": "Labor Force Participation", "unit": "%", "frequency": "monthly", "category": "employment"}
+    ],
+    "leading_indicators": [
+      {"id": "MANEMP", "name": "ISM Manufacturing Employment", "unit": "Thousands", "frequency": "monthly", "category": "leading"},
+      {"id": "UMCSENT", "name": "UMich Consumer Sentiment", "unit": "Index", "frequency": "monthly", "category": "leading"},
+      {"id": "PERMIT", "name": "Building Permits", "unit": "Thousands", "frequency": "monthly", "category": "leading"},
+      {"id": "USSLIND", "name": "Leading Index (US)", "unit": "%", "frequency": "monthly", "category": "leading"},
+      {"id": "DGORDER", "name": "Durable Goods Orders", "unit": "Millions $", "frequency": "monthly", "category": "leading"},
+      {"id": "HOUST", "name": "Housing Starts", "unit": "Thousands", "frequency": "monthly", "category": "leading"}
+    ],
+    "monetary_policy": [
+      {"id": "FEDFUNDS", "name": "Fed Funds Rate", "unit": "%", "frequency": "daily", "category": "monetary"},
+      {"id": "M2SL", "name": "M2 Money Supply", "unit": "Billions $", "frequency": "monthly", "category": "monetary"},
+      {"id": "WALCL", "name": "Fed Balance Sheet", "unit": "Millions $", "frequency": "weekly", "category": "monetary"}
+    ],
+    "financial_conditions": [
+      {"id": "NFCI", "name": "Chicago Fed NFCI", "unit": "Index", "frequency": "weekly", "category": "conditions"},
+      {"id": "STLFSI4", "name": "StL Fed Financial Stress", "unit": "Index", "frequency": "weekly", "category": "conditions"},
+      {"id": "VIXCLS", "name": "VIX", "unit": "Index", "frequency": "daily", "category": "conditions"},
+      {"id": "DTWEXBGS", "name": "Trade-Weighted USD Index", "unit": "Index", "frequency": "daily", "category": "conditions"}
+    ],
+    "output": [
+      {"id": "GDP", "name": "Real GDP", "unit": "Billions $", "frequency": "quarterly", "category": "output"},
+      {"id": "INDPRO", "name": "Industrial Production", "unit": "Index", "frequency": "monthly", "category": "output"},
+      {"id": "RSAFS", "name": "Retail Sales", "unit": "Millions $", "frequency": "monthly", "category": "output"},
+      {"id": "CFNAI", "name": "Chicago Fed Activity Index", "unit": "Index", "frequency": "monthly", "category": "output"}
+    ],
+    "recession_indicators": [
+      {"id": "USREC", "name": "NBER Recession Indicator", "unit": "Binary", "frequency": "monthly", "category": "recession"},
+      {"id": "RECPROUSM156N", "name": "Recession Probability", "unit": "%", "frequency": "monthly", "category": "recession"},
+      {"id": "SAHMREALTIME", "name": "Sahm Rule Indicator", "unit": "pp", "frequency": "monthly", "category": "recession"}
+    ]
+  }
+}

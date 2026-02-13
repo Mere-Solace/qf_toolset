@@ -24,37 +24,25 @@ tempCodeRunnerFile.py
 # Environment
 .env
 
-# Data (keep seed_series.json)
-data/finance.db
-data/exports/
+# Data (CSVs are large + regenerable; workbook is tracked)
 data/raw/
 
 # Output
 output/
-
-# Node
-frontend/node_modules/
-frontend/dist/
-frontend/.vite/
 
 # OS
 .DS_Store
 Thumbs.db
 nul
 
-# Jupyter
+# Jupyter checkpoints
 .ipynb_checkpoints/
-*.ipynb
 
 # R
 .Rhistory
 .RData
 .Rproj.user
 Rplots.pdf
-
-# Excel output
-*.xlsx
-!data/raw/*.xlsx
 
 # Misc
 *.log
