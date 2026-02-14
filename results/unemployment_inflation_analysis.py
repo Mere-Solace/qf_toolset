@@ -150,7 +150,7 @@ def main():
     ax1.set_title("U.S. Unemployment Rate and Inflation (1990–Present)")
     fig1.tight_layout()
 
-    output_dir = os.path.join(os.path.dirname(__file__), "..", "output")
+    output_dir = os.path.dirname(__file__)
     os.makedirs(output_dir, exist_ok=True)
 
     ts_path = os.path.join(output_dir, "unemployment_inflation_timeseries.png")
@@ -185,7 +185,7 @@ def main():
     ax3.legend(loc="upper right")
     fig2.tight_layout()
 
-    sc_path = os.path.join(output_dir, "unemployment_inflation_scatter.png")
+    sc_path = os.path.join(os.path.dirname(__file__), "unemployment_inflation_scatter.png")
     fig2.savefig(sc_path, dpi=150)
     print(f"Scatter chart saved to:     {os.path.abspath(sc_path)}")
 
