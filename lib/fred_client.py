@@ -2,17 +2,20 @@
 
 import os
 from datetime import date
+from pathlib import Path
 
 import pandas as pd
 from dotenv import load_dotenv
 from fredapi import Fred
 
-load_dotenv()
-
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
 
 def _get_client() -> Fred:
     """Create a fredapi client using the FRED_API_KEY env var."""
+    
     key = os.getenv("FRED_API_KEY")
+
     if not key:
         raise ValueError(
             "FRED API key is not configured. Set FRED_API_KEY in your .env file."

@@ -49,7 +49,7 @@ CATEGORY_DISPLAY = {
 }
 
 # Sheet names managed by this script (will be deleted and recreated)
-MANAGED_SHEETS = {"All Data", "Metadata"} | set(CATEGORY_DISPLAY.values())
+MANAGED_SHEETS = {"All Data", "All Data Monthly", "Metadata"} | set(CATEGORY_DISPLAY.values())
 
 
 def load_config() -> dict:
@@ -187,6 +187,24 @@ def write_df_to_sheet(
         for c_idx, value in enumerate(row, 1):
             ws.cell(row=r_idx, column=c_idx, value=value)
 
+    # Set date column width to 14 (~164 px)
+    ws.column_dimensions["A"].width = 14
+
+
+def build_monthly_df(all_data_df: pd.DataFrame) -> pd.DataFrame:
+    """Downsample the All Data DataFrame to the first available date per month."""
+    if all_data_df.empty:
+        return pd.DataFrame()
+
+    df = all_data_df.copy()
+    # Sort oldest-first so groupby keeps the earliest date in each month
+    df = df.sort_values("date").reset_index(drop=True)
+    df["_ym"] = df["date"].apply(lambda d: (d.year, d.month))
+    monthly = df.groupby("_ym", sort=True).first().reset_index(drop=True)
+    # Sort newest-first to match All Data ordering
+    monthly = monthly.sort_values("date", ascending=False).reset_index(drop=True)
+    return monthly
+
 
 def build_master_sheet():
     """Build or update the master Excel workbook."""
@@ -216,6 +234,12 @@ def build_master_sheet():
     if not all_data_df.empty:
         write_df_to_sheet(wb, "All Data", all_data_df, desc_map)
         log.info("All Data: %d rows x %d columns", len(all_data_df), len(all_data_df.columns))
+
+    # All Data Monthly sheet (first date per month)
+    monthly_df = build_monthly_df(all_data_df)
+    if not monthly_df.empty:
+        write_df_to_sheet(wb, "All Data Monthly", monthly_df, desc_map)
+        log.info("All Data Monthly: %d rows x %d columns", len(monthly_df), len(monthly_df.columns))
 
     # Per-category sheets
     for cat_key, items in config.items():
