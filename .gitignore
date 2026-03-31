@@ -46,3 +46,7 @@ Rplots.pdf
 
 # Misc
 *.log
+improvements.txt
+
+# Excel temp lock files
+~$*
