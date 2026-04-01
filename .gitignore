@@ -24,8 +24,8 @@ tempCodeRunnerFile.py
 # Environment
 .env
 
-# Data (CSVs are large + regenerable; workbook is tracked)
-data/raw/
+# Data
+data/
 
 # Output
 output/
@@ -50,3 +50,7 @@ improvements.txt
 
 # Excel temp lock files
 ~$*
+
+# Local tools
+.claude/
+CLAUDE.md
