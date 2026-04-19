@@ -18,8 +18,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from lib.csv_store import append_rows, get_last_date, save_series_csv
-from lib.fred_client import get_series
+from tools.store import append_rows, get_last_date, save_series_csv
+from tools.fred import get_series
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger(__name__)

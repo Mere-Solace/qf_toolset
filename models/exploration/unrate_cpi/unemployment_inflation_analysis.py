@@ -53,7 +53,7 @@ def load_from_workbook() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 def load_from_fred() -> tuple[pd.DataFrame, pd.DataFrame]:
     """Fetch data directly from FRED API (requires FRED_API_KEY in .env)."""
-    from lib.fred_client import get_series
+    from tools.fred import get_series
 
     df_unemp = get_series("UNRATE", start_date="1989-01-01")
     df_unemp.rename(columns={"value": "unemployment"}, inplace=True)

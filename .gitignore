@@ -24,8 +24,8 @@ tempCodeRunnerFile.py
 # Environment
 .env
 
-# Data
-data/
+# Data (CSVs are large + regenerable; workbook is tracked)
+data/raw/
 
 # Output
 output/
@@ -51,6 +51,17 @@ improvements.txt
 # Excel temp lock files
 ~$*
 
-# Local tools
+# Local work
+data/
+
 .claude/
 CLAUDE.md
+
+# Agent config (internal)
+AGENTS.md
+
+# Scratch scripts
+scripts/work.py
+
+# ETF prospectus PDFs (large, proprietary)
+ETF_Prospectuses/

@@ -6,3 +6,5 @@ matplotlib>=3.8
 openpyxl>=3.1
 fredapi>=0.5
 python-dotenv>=1.0
+yfinance>=0.2
+arch>=6.0
